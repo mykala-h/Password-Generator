@@ -18,23 +18,23 @@ function generatePassword() {
   console.log('Button Pressed')
 
   // Ask user what they want length of password to be
-  var passwordLength = prompt('Please enter a length between 8 and 128')
+  var passwordLength = prompt('Please enter a password length between 8 and 128')
 
   // When conditions of password have not been met alert user of required length and re-ask previous question
   if (passwordLength <= 8 || passwordLength >= 128) {
-    alert('Please enter the required value')
-    passwordLength = prompt('Please enter a length between 8 and 128')
+    alert('Please enter the required length of password')
+    passwordLength = prompt('Please enter a password length between 8 and 128')
   }
 
   // When user has selected the appropraite length of password will proceed to next steps
   else {
-    alert('Please proceed to next steps')
+    alert('Please chooose the characters you want in your password')
   }
 
   console.log(passwordLength)
 
   // User selects what type of characters it wants for password
-  var upperCase = confirm('Do you want an Uppercase letter?')
+  var upperCase = confirm('Do you want an uppercase letter?')
   console.log(upperCase)
 
   var lowerCase = confirm('Do you want a lowercase letter?')
@@ -48,8 +48,8 @@ function generatePassword() {
 
   // If user does not make any character selection re-ask previous questions
   if (!upperCase && !lowerCase && !symbol && !number) {
-    alert('You must select at least one value.')
-    upperCase = confirm('Do you want an Uppercase letter?')
+    alert('You must select at least one character value to continue.')
+    upperCase = confirm('Do you want an uppercase letter?')
     console.log(upperCase)
 
     lowerCase = confirm('Do you want a lowercase letter?')
@@ -64,7 +64,7 @@ function generatePassword() {
 
   // Password will be generated when conditions are met
   else {
-    alert('Your password is being generated')
+    alert('Please hold for a moment, your password is being generated')
   }
 
   // All options are true
