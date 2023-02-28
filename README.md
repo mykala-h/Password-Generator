@@ -13,6 +13,7 @@ When I started the project, I thought it would be easiest to start with randomiz
 The Acceptence Criteria has been met:
 
 * The 'generate password' button displays a series of prompts for the password criteria and is displayed to the user:
+
     *length of password
     *special character
     *uppercase letter
