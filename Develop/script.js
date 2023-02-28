@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-// Arrays
+// Array
 var upper = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
 var lower = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
 var special = ['~', '`', '!', '@', '#', '$', '%', '^', '&', '*', '_', '-', '+', '=', '{', '}', '|', ':', ';', '<', ',', '>', '.', '?', '/']
@@ -26,7 +26,7 @@ function generatePassword() {
     passwordLength = prompt('Please enter a length between 8 and 128')
   }
 
-  //when user has selected the appropraite length of password will proceed to next steps
+  // When user has selected the appropraite length of password will proceed to next steps
   else {
     alert('Please proceed to next steps')
   }
@@ -46,7 +46,7 @@ function generatePassword() {
   var number = confirm('Do you want a number?')
   console.log(number)
 
-  // "If" user does not make any character selection re-ask previous questions
+  // If user does not make any character selection re-ask previous questions
   if (!upperCase && !lowerCase && !symbol && !number) {
     alert('You must select at least one value.')
     upperCase = confirm('Do you want an Uppercase letter?')
@@ -67,13 +67,13 @@ function generatePassword() {
     alert('Your password is being generated')
   }
 
-  // All options true
+  // All options are true
   if (upperCase && lowerCase && symbol && number) {
     userPassword = upper.concat(lower, special, num)
     console.log(userPassword)
   }
 
-  // 3 options true
+  // 3 options are true
   else if (upperCase && lowerCase && symbol) {
     userPassword = upper.concat(lower, special)
     console.log(userPassword)
@@ -94,7 +94,7 @@ function generatePassword() {
     console.log(userPassword)
   }
 
-  // 2 options true
+  // 2 options are true
   else if (upperCase && lowerCase) {
     userPassword = upper.concat(lower)
     console.log(userPassword)
@@ -147,16 +147,16 @@ function generatePassword() {
     console.log(userPassword)
   }
 
-  // length of password
+  // Length of password
   let randomPassword = ''
 
-  //create a loop to randomize selection
+  // Create a loop to randomize selection
   for (var i = 0; i < passwordLength; i++) {
     randomPassword = randomPassword + userPassword[Math.floor(Math.random() * userPassword.length)]
     console.log(randomPassword)
   }
 
-  //password generated and returned to user
+  // Password generated and returned to user
   return randomPassword
 }
 
