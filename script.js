@@ -21,8 +21,9 @@ function generatePassword() {
   var passwordLength = prompt('Please enter a password length between 8 and 128')
 
   // When conditions of password have not been met alert user of required length and re-ask previous question
-  while (passwordLength <= 8 || passwordLength >= 128) {
+  while (passwordLength < 8 || passwordLength > 128) {
     alert('Please enter the required length of password')
+    console.log('ERROR: length of password not generated')
     passwordLength = prompt('Please enter a password length between 8 and 128')
   }
 
@@ -47,7 +48,8 @@ function generatePassword() {
   // Create loop which requires user to pick a character value
   while (!upperCase && !lowerCase && !symbol && !number) {
     alert('You must select at least one character value to continue.')
-    
+    console.log('ERROR: password not generated no character value selected')
+
     upperCase = confirm('Do you want an uppercase letter?')
     console.log(upperCase)
 
@@ -148,7 +150,7 @@ function generatePassword() {
 
   // Create a loop to randomize selection
   for (var i = 0; i < passwordLength; i++) {
-    randomPassword = randomPassword + userPassword[Math.floor(Math.random() * userPassword.length)]
+    randomPassword += userPassword[Math.floor(Math.random() * userPassword.length)]
     console.log(randomPassword)
   }
 
